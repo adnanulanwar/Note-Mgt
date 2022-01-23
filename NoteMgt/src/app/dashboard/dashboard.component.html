@@ -1,0 +1,158 @@
+<div class="row ">
+    <div class="col-6 col-lg-3">
+        <div class="card" style="height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title">Regular Notes</h5>
+                <p class="card-text">Regular Save Notes,Messages,Informations...</p>
+
+
+            </div>
+            <div class="card-footer">
+                <button id="btnRegular" class="btn btn-dark">See Notes</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-6 col-lg-3">
+        <div class="card" style="height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title">Reminders</h5>
+
+                <p class="card-text">Reminders for Events...</p>
+
+
+            </div>
+            <div class="card-footer">
+                <button id="btnReminder" class="btn btn-dark">See Reminders</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card" style="height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title">Tasks</h5>
+
+                <p class="card-text">Checkout your tasks...</p>
+
+
+            </div>
+            <div class="card-footer">
+                <button id="btnTask" class="btn btn-dark">See Tasks</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card" style="height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title">BookMarks</h5>
+
+                <p class="card-text">Any important links...</p>
+
+
+            </div>
+            <div class="card-footer">
+                <button id="btnBookmark" class="btn btn-dark"> See BookMarks</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                Today
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Todays Reminders and Tasks</h5>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">#</th> -->
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor=" let people of this.data">
+                            <!-- <th scope="row">{{people.lkength}}</th> -->
+                            <td>{{people.firstName}}</td>
+                            <td>{{people.lastName}}</td>
+                            <td>{{people.age}}</td>
+                            <td> <button id="btnDet{{people.firstName}}" class="btn btn-light">Detail</button> </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                This Week
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Reminders and Tasks of This Week</h5>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">#</th> -->
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor=" let people of this.data">
+                            <!-- <th scope="row">{{people.lkength}}</th> -->
+                            <td>{{people.firstName}}</td>
+                            <td>{{people.lastName}}</td>
+                            <td>{{people.age}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                This Month
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Reminders and Tasks of This Month</h5>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">#</th> -->
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor=" let people of this.data">
+                            <!-- <th scope="row">{{people.lkength}}</th> -->
+                            <td>{{people.firstName}}</td>
+                            <td>{{people.lastName}}</td>
+                            <td>{{people.age}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
