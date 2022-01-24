@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
     user.Password = this.password;
     this.cs.Login(user).subscribe((data) => {
       let user = data as User;
+      sessionStorage.removeItem("USERID");
+      sessionStorage.setItem("USERID", user.UserID.toString());
       this.router.navigate(['/dashboard']);
       // if (user.UserID > 0) {
       //   alert("Success");
