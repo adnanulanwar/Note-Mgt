@@ -24,7 +24,7 @@ namespace NoteService.Controllers
         {
             List<Note> notes = new List<Note>();
 
-            string[] lines = System.IO.File.ReadAllLines(@"c:\Users\Adnanul Anwar\Desktop\notes.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"Data/notes.txt");
 
             foreach (var row in lines)
             {
@@ -50,7 +50,7 @@ namespace NoteService.Controllers
         {
             List<Note> notes = new List<Note>();
 
-            string[] lines = System.IO.File.ReadAllLines(@"c:\Users\Adnanul Anwar\Desktop\notes.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"Data/notes.txt"); 
 
             foreach (var row in lines)
             {
@@ -83,7 +83,7 @@ namespace NoteService.Controllers
                 }
             }
 
-            var lastLine = System.IO.File.ReadLines(@"c:\Users\Adnanul Anwar\Desktop\notes.txt").LastOrDefault(); // for txt file
+            var lastLine = System.IO.File.ReadLines(@"Data/notes.txt").LastOrDefault(); // for txt file
 
             //FileStream streamed = System.IO.File.OpenRead(@"c:\Users\Adnanul Anwar\Desktop\newnotes.xml");
             //var result = (List<Note>)(NoteseriaLizer.Deserialize(streamed));
@@ -99,7 +99,7 @@ namespace NoteService.Controllers
 
             string noteStr = note.ID + "~~" +note.NoteMessage + "~~" + (int)note.NoteType + "~~" +note.UserID + "~~" +note.NoteCreateTime + "~~" + note.ReminderTime;
 
-            System.IO.File.AppendAllText(@"c:\Users\Adnanul Anwar\Desktop\notes.txt", noteStr + Environment.NewLine);
+            System.IO.File.AppendAllText(@"Data/notes.txt", noteStr + Environment.NewLine);
             //FileStream stream = System.IO.File.AppendAllText(@"c:\Users\Adnanul Anwar\Desktop\newnotes.xml");
             //NoteseriaLizer.Serialize(stream, note);
             //stream.Dispose();

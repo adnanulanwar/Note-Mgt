@@ -46,7 +46,7 @@ namespace userService.Controllers
 
             //var lastLine = System.IO.File.ReadLines(@"c:\Users\Adnanul Anwar\Desktop\users.txt").LastOrDefault(); // for txt file
 
-            string[] lines = System.IO.File.ReadAllLines(@"c:\Users\Adnanul Anwar\Desktop\users.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"Data/users.txt");
             List<User> users = new List<User>();
 
             if (lines != null || lines.Length > 0)
@@ -82,7 +82,7 @@ namespace userService.Controllers
 
             string userStr = user.UserID + "~~" + user.Name + "~~" + user.Email + "~~" + user.Password + "~~" + user.DateOfBirth;
 
-            System.IO.File.AppendAllText(@"c:\Users\Adnanul Anwar\Desktop\users.txt", userStr + Environment.NewLine);
+            System.IO.File.AppendAllText(@"Data/users.txt", userStr + Environment.NewLine);
             return user;
         }
 
@@ -90,7 +90,7 @@ namespace userService.Controllers
         [HttpPost("Login")]
         public User Login([FromBody] User user)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"c:\Users\Adnanul Anwar\Desktop\users.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"Data/users.txt");
             List<User> users = new List<User>();
 
             if (lines != null || lines.Length > 0)
