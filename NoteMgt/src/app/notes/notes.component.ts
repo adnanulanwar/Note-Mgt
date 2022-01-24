@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Note } from '../Models/Note';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-notes',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesComponent implements OnInit {
 
-  constructor() { }
+  //private noteType : number = 0;
+  public data: Note[] = [];
+  constructor(private _activeRouterLink: ActivatedRoute, private cs: CommonService) { }
 
   ngOnInit(): void {
+
+    this._activeRouterLink.paramMap.subscribe(param => {
+
+      let noteType = param.get('type');
+      let note = new Note()
+      note.NoteType = noteType ? parseInt(noteType) : 0;
+      this.cs.GetNotes(note).subscribe((data) => {
+        debugger
+        this.data = data as Note[];
+
+      })
+
+    })
   }
+
+
 
 }

@@ -19,7 +19,7 @@ namespace NoteService.Controllers
         XmlSerializer NoteseriaLizer = new XmlSerializer(typeof(Note));
 
         // GET: api/<NoteController>
-        [HttpGet]
+        [HttpPost("GetNotesByType")]
         public List<Note> Get([FromBody] Note searchNote)
         {
             List<Note> notes = new List<Note>();
@@ -40,7 +40,7 @@ namespace NoteService.Controllers
             }
 
             
-            notes = notes.Where(x => x.UserID == searchNote.UserID).ToList();
+            notes = notes.Where(x => x.UserID == searchNote.UserID && x.NoteType == searchNote.NoteType).ToList();
             return notes;
         }
 

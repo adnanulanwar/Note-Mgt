@@ -1,1 +1,32 @@
-<p>notes works!</p>
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                This Month
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Reminders and Tasks of This Month</h5>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">#</th> -->
+                            <th scope="col">Note</th>
+                            <th scope="col">Time</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor=" let note of this.data">
+                            <!-- <th scope="row">{{people.lkength}}</th> -->
+                            <td>{{note.NoteMessage}}</td>
+                            <td>{{note.ReminderTime}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>

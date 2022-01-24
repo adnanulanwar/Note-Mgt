@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../Models/User';
 import { CommonService } from '../services/common.service';
 
@@ -14,13 +15,15 @@ export class RegistrationComponent implements OnInit {
   public password = "";
   public password2 = "";
   public dateOfBirth: string = "";
+  public returnUser: User = new User();
 
-  constructor(private cs: CommonService) { }
+  constructor(private cs: CommonService, private router: Router,) { }
 
   ngOnInit(): void {
   }
 
   public Register() {
+    debugger
     if (this.name.trim() === "") {
       alert("Please Provide User Name");
       return;
@@ -48,13 +51,12 @@ export class RegistrationComponent implements OnInit {
     user.DateOfBirth = new Date(this.dateOfBirth);
 
     this.cs.Register(user).subscribe((data) => {
+      debugger
       let user = data as User;
-      if (user.UserID > 0) {
-        alert("Success");
-      }
-      else {
-        alert("Failed");
-      }
+      //alert(user.ErrorMessage);
+      //if (this.returnUser.UserID > 0) {
+      this.router.navigate(['/login']);
+      //}
     })
   }
 

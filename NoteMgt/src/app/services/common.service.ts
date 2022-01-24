@@ -9,19 +9,23 @@ import { User } from '../Models/User';
 })
 export class CommonService {
 
-  private readonly baseUrl = "https://localhost:44383/"
+  private readonly baseUrl = "https://localhost:44383/api/"
 
   constructor(private http: HttpClient) { }
 
   public Login(user: User) {
-    return this.http.post(this.baseUrl + "Login", user)
+    return this.http.post(this.baseUrl + "User/Login", user)
   }
 
   public Register(user: User) {
-    return this.http.post(this.baseUrl + "Register", user)
+    return this.http.post(this.baseUrl + "User/Register", user)
   }
 
   public Save(note: Note) {
-    return this.http.post(this.baseUrl + "SaveNote", note)
+    return this.http.post(this.baseUrl + "Note/SaveNote", note)
+  }
+
+  public GetNotes(note: Note) {
+    return this.http.post(this.baseUrl + "Note/GetNotesByType", note)
   }
 }

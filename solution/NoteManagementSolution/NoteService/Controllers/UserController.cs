@@ -60,7 +60,7 @@ namespace userService.Controllers
                     tempUser.Password = row.Split("~~")[3];
                     tempUser.DateOfBirth = DateTime.Parse(row.Split("~~")[4]);
 
-                    users.Add(user);
+                    users.Add(tempUser);
                 }
 
 
@@ -83,6 +83,7 @@ namespace userService.Controllers
             string userStr = user.UserID + "~~" + user.Name + "~~" + user.Email + "~~" + user.Password + "~~" + user.DateOfBirth;
 
             System.IO.File.AppendAllText(@"Data/users.txt", userStr + Environment.NewLine);
+            user.ErrorMessage = "Registered Succesfully";
             return user;
         }
 

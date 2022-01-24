@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'notes', component: NotesComponent },
+  { path: 'notes/:type', component: NotesComponent },
   { path: 'create', component: CreateNoteComponent },
 ];
 

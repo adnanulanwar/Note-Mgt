@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../Models/User';
 import { CommonService } from '../services/common.service';
 
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   public name: string = "";
   public password: string = "";
 
-  constructor(private cs: CommonService) { }
+  constructor(private cs: CommonService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -31,12 +32,13 @@ export class LoginComponent implements OnInit {
     user.Password = this.password;
     this.cs.Login(user).subscribe((data) => {
       let user = data as User;
-      if (user.UserID > 0) {
-        alert("Success");
-      }
-      else {
-        alert("Failed");
-      }
+      this.router.navigate(['/dashboard']);
+      // if (user.UserID > 0) {
+      //   alert("Success");
+      // }
+      // else {
+      //   alert("Failed");
+      // }
     })
   }
 
