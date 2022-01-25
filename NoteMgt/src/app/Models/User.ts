@@ -1,18 +1,18 @@
 export class User {
-    public UserID: number;
-    public Name: string;
-    public Email: string;
-    public Password: string;
-    public DateOfBirth: Date;
-    public ErrorMessage: string;
-    public Key: string;
+    public userID: number;
+    public name: string;
+    public email: string;
+    public password: string;
+    public dateOfBirth: Date;
+    public errorMessage: string;
+    public key: string;
     public constructor() {
-        this.UserID = 0;
-        this.Name = "";
-        this.Email = "";
-        this.Password = "";
-        this.DateOfBirth = new Date();
-        this.ErrorMessage = "";
-        this.Key = "";
+        this.userID = 0;
+        this.name = "";
+        this.email = "";
+        this.password = "";
+        this.dateOfBirth = new Date();
+        this.errorMessage = "";
+        this.key = "";
     }
 }

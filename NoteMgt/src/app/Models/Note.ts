@@ -1,18 +1,18 @@
 export class Note {
-    public ID: number;
-    public NoteMessage: string;
-    public NoteType: number;
-    public UserID: number;
-    public NoteCreateTime: Date;
-    public ErrorMessage: string;
-    public ReminderTime: Date;
+    public id: number;
+    public noteMessage: string;
+    public noteType: number;
+    public userID: number;
+    public noteCreateTime: Date;
+    public errorMessage: string;
+    public reminderTime: Date;
     public constructor() {
-        this.ID = 0;
-        this.NoteMessage = "";
-        this.NoteType = 0;
-        this.UserID = 0;
-        this.NoteCreateTime = new Date();
-        this.ReminderTime = new Date();
-        this.ErrorMessage = "";
+        this.id = 0;
+        this.noteMessage = "";
+        this.noteType = 0;
+        this.userID = 0;
+        this.noteCreateTime = new Date();
+        this.reminderTime = new Date();
+        this.errorMessage = "";
     }
 }

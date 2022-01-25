@@ -45,18 +45,18 @@ export class RegistrationComponent implements OnInit {
     }
 
     let user = new User();
-    user.Name = this.name;
-    user.Password = this.password;
-    user.Email = this.email;
-    user.DateOfBirth = new Date(this.dateOfBirth);
+    user.name = this.name;
+    user.password = this.password;
+    user.email = this.email;
+    user.dateOfBirth = new Date(this.dateOfBirth);
 
     this.cs.Register(user).subscribe((data) => {
       debugger
       let user = data as User;
       //alert(user.ErrorMessage);
-      //if (this.returnUser.UserID > 0) {
+      if (this.returnUser.userID > 0) {
       this.router.navigate(['/login']);
-      //}
+      }
     })
   }
 

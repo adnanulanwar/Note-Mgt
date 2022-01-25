@@ -28,19 +28,21 @@ export class LoginComponent implements OnInit {
       return;
     }
     let user = new User();
-    user.Name = this.name;
-    user.Password = this.password;
+    user.name = this.name;
+    user.password = this.password;
     this.cs.Login(user).subscribe((data) => {
+      debugger
       let user = data as User;
-      sessionStorage.removeItem("USERID");
-      sessionStorage.setItem("USERID", user.UserID.toString());
-      this.router.navigate(['/dashboard']);
-      // if (user.UserID > 0) {
-      //   alert("Success");
-      // }
-      // else {
-      //   alert("Failed");
-      // }
+  
+      if (user.userID > 0) {
+        alert("Success");
+        sessionStorage.removeItem("USERID");
+        sessionStorage.setItem("USERID", user.userID.toString());
+        this.router.navigate(['/dashboard']);
+      }
+      else {
+        alert("Failed");
+      }
     })
   }
 

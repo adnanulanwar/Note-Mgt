@@ -21,8 +21,8 @@ export class NotesComponent implements OnInit {
       let noteType = param.get('type');
       let note = new Note()
       var id = sessionStorage.getItem("USERID");
-      note.UserID = id ? parseInt(id) : 0;
-      note.NoteType = noteType ? parseInt(noteType) : 0;
+      note.userID = id ? parseInt(id) : 0;
+      note.noteType = noteType ? parseInt(noteType) : 0;
       this.cs.GetNotes(note).subscribe((data) => {
         debugger
         this.data = data as Note[];

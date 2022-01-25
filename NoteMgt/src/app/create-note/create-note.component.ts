@@ -31,13 +31,13 @@ export class CreateNoteComponent implements OnInit {
 
 
     let note = new Note();
-    note.NoteMessage = this.note;
-    note.NoteType = this.noteType;
-    note.ReminderTime = new Date(this.reminderTime);
+    note.noteMessage = this.note;
+    note.noteType = this.noteType;
+    note.reminderTime = new Date(this.reminderTime);
 
     this.cs.Save(note).subscribe((data) => {
       let note = data as Note;
-      if (note.ID > 0) {
+      if (note.id > 0) {
         alert("Success");
       }
       else {
